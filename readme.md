@@ -5,3 +5,4 @@ Postęp pracy:
 -09.12  Założenie repozytorium
 -13.12  Dodanie założeń projektowych
 -15.12  Aktualizacja założeń o schemat
+-22.12  Zrealizowanie obsługi dalmierza HC-SR04
