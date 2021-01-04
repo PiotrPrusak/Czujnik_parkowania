@@ -408,6 +408,16 @@
               <FileType>1</FileType>
               <FilePath>.\HC_SR04.c</FilePath>
             </File>
+            <File>
+              <FileName>Nokia5110.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Nokia5110.c</FilePath>
+            </File>
+            <File>
+              <FileName>speaker.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\speaker.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -437,6 +447,21 @@
               <FileName>HC_SR04.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\HC_SR04.h</FilePath>
+            </File>
+            <File>
+              <FileName>Nokia5110.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Nokia5110.h</FilePath>
+            </File>
+            <File>
+              <FileName>speaker.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\speaker.h</FilePath>
+            </File>
+            <File>
+              <FileName>sinus.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\sinus.h</FilePath>
             </File>
           </Files>
         </Group>

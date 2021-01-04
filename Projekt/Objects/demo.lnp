@@ -4,6 +4,8 @@
 ".\objects\main.o"
 ".\objects\pit.o"
 ".\objects\hc_sr04.o"
+".\objects\nokia5110.o"
+".\objects\speaker.o"
 ".\objects\startup_mkl05z4.o"
 ".\objects\system_mkl05z4.o"
 --strict --scatter ".\Objects\demo.sct"
