@@ -6,7 +6,7 @@
 /******************************************************************************\
 * Private definitions
 \******************************************************************************/
-#define ECHO 6
+#define ECHO 13
 #define TRIG 5
 
 /******************************************************************************\
@@ -16,38 +16,38 @@ static uint16_t tpm0Diff = 0;
 static uint16_t tpm0New = 0;
 static uint16_t tpm0Old = 0;
 
-void TPM0_Init_InputCapture(void) {
+void TPM1_Init_InputCapture(void) {
 		
-  SIM->SCGC6 |= SIM_SCGC6_TPM0_MASK;		// Enable TPM0 mask in SCGC6 register
+  SIM->SCGC6 |= SIM_SCGC6_TPM1_MASK;		// Enable TPM1 mask in SCGC6 register
 	SIM->SOPT2 |= SIM_SOPT2_TPMSRC(1);		// Choose MCGFLLCLK clock source
 	
 	SIM->SCGC5 |= SIM_SCGC5_PORTB_MASK; 	// Connect port B to clock
-	PORTB->PCR[ECHO] = PORT_PCR_MUX(2);   // Set multiplekser to TPM0 for PTB6 
+	PORTB->PCR[ECHO] = PORT_PCR_MUX(2);   // Set multiplekser to TPM1 for PTB13 
 	
-	TPM0->SC |= TPM_SC_PS(7);  						// Set prescaler to 128
-	TPM0->SC |= TPM_SC_CMOD(1);						// Select the internal input clock source for TPM0
+	TPM1->SC |= TPM_SC_PS(7);  						// Set prescaler to 128
+	TPM1->SC |= TPM_SC_CMOD(1);						// Select the internal input clock source for TPM1
 	
   //Connect channel 3 from TPM0 for "input capture" mode
-	TPM0->SC &= ~TPM_SC_CPWMS_MASK; 		// up counting 
-	TPM0->CONTROLS[3].CnSC |= (TPM_CnSC_ELSB_MASK | TPM_CnSC_ELSA_MASK | TPM_CnSC_CHIE_MASK); //set input capture on both edges and enable interrupt on chanel 3
+	TPM1->SC &= ~TPM_SC_CPWMS_MASK; 		// up counting 
+	TPM1->CONTROLS[1].CnSC |= (TPM_CnSC_ELSB_MASK | TPM_CnSC_ELSA_MASK | TPM_CnSC_CHIE_MASK); //set input capture on both edges and enable interrupt on chanel 3
 	
-	NVIC_SetPriority(TPM0_IRQn, 1);  // TPM0 interrupt priority level  
-	NVIC_ClearPendingIRQ(TPM0_IRQn); 
-	NVIC_EnableIRQ(TPM0_IRQn);			 // Enable Interrupts 
+	NVIC_SetPriority(TPM1_IRQn, 1);  // TPM0 interrupt priority level  
+	NVIC_ClearPendingIRQ(TPM1_IRQn); 
+	NVIC_EnableIRQ(TPM1_IRQn);			 // Enable Interrupts 
 
 }
 
-uint32_t TPM0_GetVal(void) {
+uint32_t TPM1_GetVal(void) {
 	return tpm0Diff;
 }
 
 //function to measure HIGH level time on ECHO pin
-void TPM0_IRQHandler(void) {
+void TPM1_IRQHandler(void) {
 	
 	tpm0Old = tpm0New;
-	tpm0New = TPM0->CONTROLS[3].CnV & 0xFFFF;  	//Enable saving counter value
+	tpm0New = TPM1->CONTROLS[1].CnV & 0xFFFF;  	//Enable saving counter value
 	tpm0Diff = tpm0New - tpm0Old;							 	//Calculate difference
-	TPM0->CONTROLS[3].CnSC |= TPM_CnSC_CHF_MASK;//Clear channel flag
+	TPM1->CONTROLS[1].CnSC |= TPM_CnSC_CHF_MASK;//Clear channel flag
 }
 
 //function to set TRIG pin as GPIO output

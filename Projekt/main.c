@@ -3,7 +3,8 @@
 #include "pit.h"
 #include "HC_SR04.h" 
 #include "MKL05Z4.h" /*Device header*/
-
+#include "speaker.h"
+#include "sinus.h"
 void lcd_static(void);
 void lcd_update(void);
 
@@ -18,14 +19,15 @@ int main (void) {
 	//SysTick_Config(1000000); 			// initialize system timer 
 	PIT_Init_Generator (); 				// PIT initialization
 
-  TPM0_Init_InputCapture();	    // TPM0 initialization							
+  TPM1_Init_InputCapture();	    // TPM0 initialization							
 	TRIG_GPIO_Init();							// set TRIG PIN as GPIO
-
+	TPM0_Init_PCM();
 
   while(1) {
 
 	TRIG_inpulse(); //get 1ms inpulse on TRIG to initialize sound wave on HC-SR04
 	lcd_update();		//show ECHO 
+	change_wave_period((int)TPM1_GetVal()/19);
 	delay_ms(500);
 		} 						// end_while 
 }									// end_main
@@ -45,5 +47,5 @@ void lcd_static(void) {
 //function to print HC-SR04 distance in cm on LCD
 void lcd_update(void) {     
 	LCD1602_SetCursor(9, 1);  
-	LCD1602_PrintNum((int)TPM0_GetVal()/19);   //divide by 19 to get result in cm ( it depend on prescaler value, speed of sound....)
+	LCD1602_PrintNum((int)TPM1_GetVal()/19);   //divide by 19 to get result in cm ( it depend on prescaler value, speed of sound....)
 }
