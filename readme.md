@@ -8,3 +8,4 @@ Postęp pracy:
 -22.12  Zrealizowanie obsługi dalmierza HC-SR04
 -04.01  Zrealizowanie dzwiękowej prezentacji danych z dalmerza
 -04.01  Inicjalizacja wyświetlacza Nokia 5110
+-07.01  Zrealizowanie wizualnej prezentacji danych z dalmerza na wyświtlaczu Nokia 5110
