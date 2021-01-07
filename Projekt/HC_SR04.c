@@ -1,6 +1,6 @@
 
 #include "HC_SR04.h"
-
+#include "delay.h"
 
 
 /******************************************************************************\
@@ -45,7 +45,7 @@ uint32_t TPM1_GetVal(void) {
 void TPM1_IRQHandler(void) {
 	
 	tpm0Old = tpm0New;
-	tpm0New = TPM1->CONTROLS[1].CnV & 0xFFFF;  	//Enable saving counter value
+	tpm0New = TPM1->CONTROLS[1].CnV & 0xFFFFFFFF;  	//Enable saving counter value
 	tpm0Diff = tpm0New - tpm0Old;							 	//Calculate difference
 	TPM1->CONTROLS[1].CnSC |= TPM_CnSC_CHF_MASK;//Clear channel flag
 }
@@ -64,12 +64,4 @@ void TRIG_inpulse(void){
 			delay_ms(1); 							//wait 1ms
 			PTB->PTOR|=(1<<TRIG);			//disable HIGH level on TRIG
 			delay_ms(1);
-}
-
-//function to realise 
-void delay_ms( int n) {
-volatile int i;
-volatile int j;
-							for( i = 0 ; i < n; i++)
-							for(j = 0; j < 3500; j++) {}
 }

@@ -10,4 +10,4 @@
   C:\Users\asus\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include\system_MKL05Z4.h \
   lcd1602.h i2c.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h pit.h \
   HC_SR04.h speaker.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-  sinus.h Nokia5110.h
+  sinus.h Nokia5110.h delay.h bitmap.h font.h

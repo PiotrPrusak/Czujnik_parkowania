@@ -418,6 +418,21 @@
               <FileType>1</FileType>
               <FilePath>.\speaker.c</FilePath>
             </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>bitmap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\bitmap.c</FilePath>
+            </File>
+            <File>
+              <FileName>font.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\font.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -462,6 +477,21 @@
               <FileName>sinus.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\sinus.h</FilePath>
+            </File>
+            <File>
+              <FileName>delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>bitmap.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\bitmap.h</FilePath>
+            </File>
+            <File>
+              <FileName>font.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\font.h</FilePath>
             </File>
           </Files>
         </Group>

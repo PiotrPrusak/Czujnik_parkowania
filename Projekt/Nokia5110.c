@@ -4,6 +4,11 @@
 #include "HC_SR04.h" 
 #include "MKL05Z4.h" /*Device header*/
 #include "Nokia5110.h"
+#include "font.h"
+#include "bitmap.h"
+#include "delay.h"
+
+
 
 #define RST 3  //resetowanie rejestrow wyswitlacza na poczatku trzeba wygenerowac 0 przez 100ns w trakcie pracy stan 1
 #define CE 4   //Chip enable (CS)
@@ -11,7 +16,18 @@
 #define DIN 7	 //data in(MOSI)
 #define CLK 0	 //zegar (SCLK)
 
+#define PCD8544_FUNCTION_SET		0x20
+#define PCD8544_DISP_CONTROL		0x08
+#define PCD8544_DISP_NORMAL			0x0c
+#define PCD8544_SET_Y						0x40
+#define PCD8544_SET_X						0x80
+#define PCD8544_H_TC						0x04
+#define PCD8544_H_BIAS					0x10
+#define PCD8544_H_VOP						0x80
 
+#define LCD_BUFFER_SIZE			(84 * 48 / 8)
+
+uint8_t lcd_buffer[LCD_BUFFER_SIZE];
 
 void InitSPI(void)
 {
@@ -72,5 +88,52 @@ void lcd_data(const uint8_t* data, int size)
 	PTB->PCOR|=(1<<CE);     //CS=0
 	for (i = 0; i < size; i++)
 		spi_send(data[i]);
+	PTB->PSOR|=(1<<CE);
+}
+
+void lcd_setup(void)
+{
+	lcd_reset();
+	
+	lcd_cmd(PCD8544_FUNCTION_SET | 1);
+	lcd_cmd(PCD8544_H_BIAS | 4);
+	lcd_cmd(PCD8544_H_VOP | 0x3f);
+	lcd_cmd(PCD8544_FUNCTION_SET);
+	lcd_cmd(PCD8544_DISP_NORMAL);
+}
+
+void lcd_clear(void)
+{
+	memset(lcd_buffer, 0, LCD_BUFFER_SIZE);
+}	
+
+
+void lcd_draw_bitmap(const uint8_t* data)
+{
+	memcpy(lcd_buffer, data, LCD_BUFFER_SIZE);
+}	
+
+
+void lcd_draw_text(int row, int col, const char* text)
+{
+		int i;
+	uint8_t* pbuf = &lcd_buffer[row * 84 + col];
+	while ((*text) && (pbuf < &lcd_buffer[LCD_BUFFER_SIZE - 6])) {
+		int ch = *text++;
+		const uint8_t* font = &font_ASCII[ch - ' '][0];
+		for (i = 0; i < 5; i++) {
+			*pbuf++ = *font++;
+		}
+		*pbuf++ = 0;
+	}
+}
+
+void lcd_copy(void)
+{
+	int i;
+	PTB->PSOR|=(1<<DC);     //send data
+	PTB->PCOR|=(1<<CE);     //CS=0
+	for (i = 0; i < LCD_BUFFER_SIZE; i++)
+		spi_send(lcd_buffer[i]);
 	PTB->PSOR|=(1<<CE);
 }
