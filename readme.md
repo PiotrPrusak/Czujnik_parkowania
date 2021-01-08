@@ -9,3 +9,4 @@ Postęp pracy:
 -04.01  Zrealizowanie dzwiękowej prezentacji danych z dalmerza
 -04.01  Inicjalizacja wyświetlacza Nokia 5110
 -07.01  Zrealizowanie wizualnej prezentacji danych z dalmerza na wyświtlaczu Nokia 5110
+-08.01  Aktualizacja o powitalne logo
