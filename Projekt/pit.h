@@ -1,14 +1,3 @@
-/******************************************************************************
- * This file is a part of the SM2 Tutorial (C).                               *                                                 *
- ******************************************************************************/
-
-/**
- * @file pit.h
- * @author Koryciak
- * @date Nov 2020
- * @brief File containing enums, structures and declarations for PIT.
- * @ver 0.1
- */
 
 #ifndef PIT_H
 #define PIT_H
