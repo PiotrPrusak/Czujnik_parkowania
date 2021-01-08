@@ -1,6 +1,7 @@
 
 #include "HC_SR04.h"
 #include "delay.h"
+#include "delay_us.h"
 
 
 /******************************************************************************\
@@ -38,7 +39,7 @@ void TPM1_Init_InputCapture(void) {
 }
 
 uint32_t TPM1_GetVal(void) {
-	return tpm0Diff;
+	return tpm0Diff/19;//divide by 19 to get result in cm ( it depend on prescaler value, speed of sound....)
 }
 
 //function to measure HIGH level time on ECHO pin
@@ -61,7 +62,7 @@ void TRIG_GPIO_Init(void){
 //function to get 1ms inpulse on TRIG pin
 void TRIG_inpulse(void){ 
 			PTB->PTOR|=(1<<TRIG);     //enable HIGH level on TRIG
-			delay_ms(1); 							//wait 1ms
+			delay_us(10); 							//wait 10us
 			PTB->PTOR|=(1<<TRIG);			//disable HIGH level on TRIG
-			delay_ms(1);
+			delay_us(10);
 }

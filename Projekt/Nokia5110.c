@@ -1,5 +1,4 @@
 #include "frdm_bsp.h" 
-#include "lcd1602.h" 
 #include "pit.h"
 #include "HC_SR04.h" 
 #include "MKL05Z4.h" /*Device header*/
@@ -27,7 +26,9 @@
 
 #define LCD_BUFFER_SIZE			(84 * 48 / 8)
 
-uint8_t lcd_buffer[LCD_BUFFER_SIZE];
+static char str[12];
+static uint8_t lcd_buffer[LCD_BUFFER_SIZE];
+uint8_t itoa(int value, char *ptr);
 
 void InitSPI(void)
 {
@@ -64,7 +65,7 @@ void lcd_reset(void)
 			PTB->PSOR|=(1<<RST);			//disable LOW level on RST
 }
 
-uint8_t spi_send(uint8_t byte)
+void spi_send(uint8_t byte)
 {
 	// poczekaj az bufor nadawczy bedzie wolny
 	while (!(SPI0->S & SPI_S_SPTEF_MASK));
@@ -136,4 +137,39 @@ void lcd_copy(void)
 	for (i = 0; i < LCD_BUFFER_SIZE; i++)
 		spi_send(lcd_buffer[i]);
 	PTB->PSOR|=(1<<CE);
+}
+uint8_t itoa(int value, char *ptr) {
+	
+	uint8_t count=0;
+	int temp;
+	
+	if(value==0) {   
+		*ptr++='0';
+		*ptr='\0';
+		return 1;
+	}
+	if(value<0) {
+		value*=(-1);    
+		*ptr++='-';
+		count++;
+	}
+	for(temp=value;temp>0;ptr++) {
+		temp/=10;
+	}
+	*ptr='\0';
+	for(temp=value;temp>0;temp/=10) {
+		*--ptr=temp%10+'0';
+		count++;
+	}
+	return count;
+}
+
+//function to print HC-SR04 distance in cm on LCD
+void lcd_update(void) {     
+	itoa((int)TPM1_GetVal(), str);
+	lcd_clear();
+	lcd_draw_text(0, 1 * 8,str);
+	lcd_copy();
+ 
+   
 }

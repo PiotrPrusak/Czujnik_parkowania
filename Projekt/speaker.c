@@ -9,7 +9,7 @@
 
 void TPM0_IRQHandler(void);
 
-//static uint8_t tpm0Enabled = 0;
+
 
 static uint16_t upSampleCNT = 0;
 static uint16_t sampleCNT = 0;
@@ -50,7 +50,6 @@ void TPM0_Init_PCM(void) {
 	NVIC_ClearPendingIRQ(TPM0_IRQn); 
 	NVIC_EnableIRQ(TPM0_IRQn);	/* Enable Interrupts */
 	
-//	tpm0Enabled = 1;  /* set local flag */
 }
 
 void TPM0_PCM_Play(void) {

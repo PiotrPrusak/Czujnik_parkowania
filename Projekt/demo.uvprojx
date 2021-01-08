@@ -384,16 +384,6 @@
           <GroupName>src</GroupName>
           <Files>
             <File>
-              <FileName>i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\i2c.c</FilePath>
-            </File>
-            <File>
-              <FileName>lcd1602.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\lcd1602.c</FilePath>
-            </File>
-            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
@@ -433,6 +423,11 @@
               <FileType>1</FileType>
               <FilePath>.\font.c</FilePath>
             </File>
+            <File>
+              <FileName>delay_us.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\delay_us.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -442,16 +437,6 @@
               <FileName>frdm_bsp.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\frdm_bsp.h</FilePath>
-            </File>
-            <File>
-              <FileName>i2c.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\i2c.h</FilePath>
-            </File>
-            <File>
-              <FileName>lcd1602.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\lcd1602.h</FilePath>
             </File>
             <File>
               <FileName>pit.h</FileName>
@@ -492,6 +477,11 @@
               <FileName>font.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\font.h</FilePath>
+            </File>
+            <File>
+              <FileName>delay_us.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\delay_us.h</FilePath>
             </File>
           </Files>
         </Group>

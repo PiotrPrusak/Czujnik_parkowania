@@ -1,6 +1,4 @@
 --cpu Cortex-M0+
-".\objects\i2c.o"
-".\objects\lcd1602.o"
 ".\objects\main.o"
 ".\objects\pit.o"
 ".\objects\hc_sr04.o"
@@ -9,6 +7,7 @@
 ".\objects\delay.o"
 ".\objects\bitmap.o"
 ".\objects\font.o"
+".\objects\delay_us.o"
 ".\objects\startup_mkl05z4.o"
 ".\objects\system_mkl05z4.o"
 --strict --scatter ".\Objects\demo.sct"

@@ -21,33 +21,20 @@ Target DLL:      Segger\JL2CM3.dll V2.99.38.0
 Dialog DLL:      TARMCM1.DLL V1.14.3.0
  
 <h2>Project:</h2>
-C:\Users\asus\Desktop\Czujnik_parkowania-main\Projekt\demo.uvprojx
-Project File Date:  01/04/2021
+C:\Users\asus\Desktop\smp08_01\Czujnik_parkowania-main\Projekt\demo.uvprojx
+Project File Date:  01/08/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.14.1', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'FRDM-KL05ZJ'
-main.c(11): warning: In file included from...
-./font.h(8): warning: no newline at end of file [-Wnewline-eof]
-#endif /* FONT_H_ */
-                    ^
-main.c(51): warning: implicit conversion loses integer precision: 'int' to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-        change_wave_period((int)TPM1_GetVal()/19);
-        ~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~^~~
-main.c(70): warning: implicit declaration of function 'itoa' is invalid in C99 [-Wimplicit-function-declaration]
-        itoa((int)TPM1_GetVal()/19, str, 10);
-        ^
-main.c(15): warning: no previous extern declaration for non-static variable 'str' [-Wmissing-variable-declarations]
-        char str[12];
-             ^
-main.c(15): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-        char str[12];
-        ^
-4 warnings generated.
+main.c(44): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        change_wave_period(TPM1_GetVal());  //change frequency of speaker tone
+        ~~~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~
+1 warning generated.
 compiling main.c...
 linking...
-Program Size: Code=2434 RO-data=6694 RW-data=0 ZI-data=888  
-".\Objects\demo.axf" - 0 Error(s), 4 Warning(s).
+Program Size: Code=2702 RO-data=7198 RW-data=0 ZI-data=888  
+".\Objects\demo.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -73,9 +60,9 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device\Source\ARM\startup_MKL05Z4.s
       Source file:   Device\Source\system_MKL05Z4.c
-Build Time Elapsed:  00:00:02
+      Source file:   Device\Source\ARM\startup_MKL05Z4.s
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

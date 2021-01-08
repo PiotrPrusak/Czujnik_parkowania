@@ -19,7 +19,7 @@ void lcd_draw_text(int row, int col, const char* text);
  
 void lcd_copy(void);
 ////////////////////////////z forbota
-uint8_t spi_send(uint8_t byte);
+void spi_send(uint8_t byte);
 
 
 void lcd_cmd(uint8_t cmd);
@@ -27,6 +27,7 @@ void lcd_cmd(uint8_t cmd);
 	
 void lcd_data(const uint8_t* data, int size);
 
-
+void lcd_update(void);
 
 #endif // Nokia5110
+
