@@ -1,7 +1,7 @@
 # Czujnik_parkowania
 W projekcie chcemy zrealizować czujnik parkowania z wykorzystaniem dalmierza ultradzwiękowego oraz wyświetlić dane w sposób graficzny na wyświtlaczu Nokii i sposób dzwiękowy za pomocą głośnika
 
-![Realizacja](C:\Users\asus\Desktop\studia\5 semestr\mikroprocki2\filmik_SMP\Projekt.jpg?raw=true )
+![Realizacja](C:/Users/asus/Desktop/studia/5 semestr/mikroprocki2/filmik_SMP/Projekt.jpg?raw=true )
 
 **Postęp pracy:**
 - 09.12  Założenie repozytorium
