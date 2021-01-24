@@ -17,4 +17,3 @@ void change_wave_period(uint8_t new_wave_period);
 
 
 #endif
-

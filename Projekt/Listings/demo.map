@@ -10,15 +10,13 @@ Section Cross References
     main.o(.text.main) refers to speaker.o(.text.TPM0_Init_PCM) for TPM0_Init_PCM
     main.o(.text.main) refers to nokia5110.o(.text.InitSPI) for InitSPI
     main.o(.text.main) refers to nokia5110.o(.text.lcd_setup) for lcd_setup
-    main.o(.text.main) refers to nokia5110.o(.text.lcd_draw_bitmap) for lcd_draw_bitmap
-    main.o(.text.main) refers to nokia5110.o(.text.lcd_copy) for lcd_copy
-    main.o(.text.main) refers to delay.o(.text.delay_ms) for delay_ms
-    main.o(.text.main) refers to nokia5110.o(.text.lcd_clear) for lcd_clear
+    main.o(.text.main) refers to nokia5110.o(.text.lcd_hello) for lcd_hello
+    main.o(.text.main) refers to nokia5110.o(.text.lcd_zwolnienie) for lcd_zwolnienie
     main.o(.text.main) refers to hc_sr04.o(.text.TRIG_inpulse) for TRIG_inpulse
     main.o(.text.main) refers to nokia5110.o(.text.lcd_update) for lcd_update
     main.o(.text.main) refers to hc_sr04.o(.text.TPM1_GetVal) for TPM1_GetVal
     main.o(.text.main) refers to speaker.o(.text.change_wave_period) for change_wave_period
-    main.o(.text.main) refers to bitmap.o(.rodata.logo) for logo
+    main.o(.text.main) refers to delay.o(.text.delay_ms) for delay_ms
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
     pit.o(.text.PIT_Init_Generator) refers to pit.o(.text.__NVIC_SetPriority) for __NVIC_SetPriority
     pit.o(.text.PIT_Init_Generator) refers to pit.o(.text.__NVIC_ClearPendingIRQ) for __NVIC_ClearPendingIRQ
@@ -64,9 +62,12 @@ Section Cross References
     nokia5110.o(.text.lcd_draw_bitmap) refers to rt_memcpy.o(.text) for __aeabi_memcpy
     nokia5110.o(.text.lcd_draw_bitmap) refers to nokia5110.o(.bss.lcd_buffer) for [Anonymous Symbol]
     nokia5110.o(.ARM.exidx.text.lcd_draw_bitmap) refers to nokia5110.o(.text.lcd_draw_bitmap) for [Anonymous Symbol]
-    nokia5110.o(.text.lcd_draw_text) refers to nokia5110.o(.bss.lcd_buffer) for [Anonymous Symbol]
-    nokia5110.o(.text.lcd_draw_text) refers to font.o(.rodata.font_ASCII) for font_ASCII
-    nokia5110.o(.ARM.exidx.text.lcd_draw_text) refers to nokia5110.o(.text.lcd_draw_text) for [Anonymous Symbol]
+    nokia5110.o(.text.lcd_draw_text_small) refers to nokia5110.o(.bss.lcd_buffer) for [Anonymous Symbol]
+    nokia5110.o(.text.lcd_draw_text_small) refers to font.o(.rodata.font_ASCII) for font_ASCII
+    nokia5110.o(.ARM.exidx.text.lcd_draw_text_small) refers to nokia5110.o(.text.lcd_draw_text_small) for [Anonymous Symbol]
+    nokia5110.o(.text.lcd_draw_text_medium) refers to nokia5110.o(.bss.lcd_buffer) for [Anonymous Symbol]
+    nokia5110.o(.text.lcd_draw_text_medium) refers to font.o(.rodata.font1_ASCII) for font1_ASCII
+    nokia5110.o(.ARM.exidx.text.lcd_draw_text_medium) refers to nokia5110.o(.text.lcd_draw_text_medium) for [Anonymous Symbol]
     nokia5110.o(.text.lcd_copy) refers to nokia5110.o(.text.spi_send) for spi_send
     nokia5110.o(.text.lcd_copy) refers to nokia5110.o(.bss.lcd_buffer) for [Anonymous Symbol]
     nokia5110.o(.ARM.exidx.text.lcd_copy) refers to nokia5110.o(.text.lcd_copy) for [Anonymous Symbol]
@@ -74,11 +75,36 @@ Section Cross References
     nokia5110.o(.ARM.exidx.text.itoa) refers to nokia5110.o(.text.itoa) for [Anonymous Symbol]
     nokia5110.o(.text.lcd_update) refers to hc_sr04.o(.text.TPM1_GetVal) for TPM1_GetVal
     nokia5110.o(.text.lcd_update) refers to nokia5110.o(.text.itoa) for itoa
-    nokia5110.o(.text.lcd_update) refers to nokia5110.o(.text.lcd_clear) for lcd_clear
-    nokia5110.o(.text.lcd_update) refers to nokia5110.o(.text.lcd_draw_text) for lcd_draw_text
+    nokia5110.o(.text.lcd_update) refers to nokia5110.o(.text.lcd_draw_text_medium) for lcd_draw_text_medium
     nokia5110.o(.text.lcd_update) refers to nokia5110.o(.text.lcd_copy) for lcd_copy
+    nokia5110.o(.text.lcd_update) refers to delay.o(.text.delay_ms) for delay_ms
+    nokia5110.o(.text.lcd_update) refers to nokia5110.o(.text.lcd_draw_bitmap) for lcd_draw_bitmap
     nokia5110.o(.text.lcd_update) refers to nokia5110.o(.bss.str) for [Anonymous Symbol]
+    nokia5110.o(.text.lcd_update) refers to bitmap.o(.rodata.logo1) for logo1
+    nokia5110.o(.text.lcd_update) refers to bitmap.o(.rodata.logo2) for logo2
+    nokia5110.o(.text.lcd_update) refers to bitmap.o(.rodata.logo3) for logo3
+    nokia5110.o(.text.lcd_update) refers to bitmap.o(.rodata.logo4) for logo4
+    nokia5110.o(.text.lcd_update) refers to bitmap.o(.rodata.logo5) for logo5
+    nokia5110.o(.text.lcd_update) refers to bitmap.o(.rodata.logo6) for logo6
+    nokia5110.o(.text.lcd_update) refers to bitmap.o(.rodata.logo7) for logo7
+    nokia5110.o(.text.lcd_update) refers to bitmap.o(.rodata.logo8) for logo8
+    nokia5110.o(.text.lcd_update) refers to bitmap.o(.rodata.logo9) for logo9
+    nokia5110.o(.text.lcd_update) refers to bitmap.o(.rodata.logo10) for logo10
     nokia5110.o(.ARM.exidx.text.lcd_update) refers to nokia5110.o(.text.lcd_update) for [Anonymous Symbol]
+    nokia5110.o(.text.lcd_hello) refers to nokia5110.o(.text.lcd_draw_bitmap) for lcd_draw_bitmap
+    nokia5110.o(.text.lcd_hello) refers to nokia5110.o(.text.lcd_copy) for lcd_copy
+    nokia5110.o(.text.lcd_hello) refers to nokia5110.o(.text.lcd_clear) for lcd_clear
+    nokia5110.o(.text.lcd_hello) refers to delay.o(.text.delay_ms) for delay_ms
+    nokia5110.o(.text.lcd_hello) refers to nokia5110.o(.text.lcd_draw_text_small) for lcd_draw_text_small
+    nokia5110.o(.text.lcd_hello) refers to bitmap.o(.rodata.logo) for logo
+    nokia5110.o(.ARM.exidx.text.lcd_hello) refers to nokia5110.o(.text.lcd_hello) for [Anonymous Symbol]
+    nokia5110.o(.text.lcd_zwolnienie) refers to nokia5110.o(.text.lcd_draw_text_medium) for lcd_draw_text_medium
+    nokia5110.o(.text.lcd_zwolnienie) refers to nokia5110.o(.text.lcd_copy) for lcd_copy
+    nokia5110.o(.text.lcd_zwolnienie) refers to delay.o(.text.delay_ms) for delay_ms
+    nokia5110.o(.text.lcd_zwolnienie) refers to nokia5110.o(.text.lcd_draw_bitmap) for lcd_draw_bitmap
+    nokia5110.o(.text.lcd_zwolnienie) refers to nokia5110.o(.text.lcd_clear) for lcd_clear
+    nokia5110.o(.text.lcd_zwolnienie) refers to bitmap.o(.rodata.please) for please
+    nokia5110.o(.ARM.exidx.text.lcd_zwolnienie) refers to nokia5110.o(.text.lcd_zwolnienie) for [Anonymous Symbol]
     speaker.o(.text.TPM0_Init_PCM) refers to speaker.o(.text.__NVIC_SetPriority) for __NVIC_SetPriority
     speaker.o(.text.TPM0_Init_PCM) refers to speaker.o(.text.__NVIC_ClearPendingIRQ) for __NVIC_ClearPendingIRQ
     speaker.o(.text.TPM0_Init_PCM) refers to speaker.o(.text.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
@@ -264,10 +290,13 @@ Removing Unused input sections from the image.
     Removing nokia5110.o(.ARM.exidx.text.lcd_setup), (8 bytes).
     Removing nokia5110.o(.ARM.exidx.text.lcd_clear), (8 bytes).
     Removing nokia5110.o(.ARM.exidx.text.lcd_draw_bitmap), (8 bytes).
-    Removing nokia5110.o(.ARM.exidx.text.lcd_draw_text), (8 bytes).
+    Removing nokia5110.o(.ARM.exidx.text.lcd_draw_text_small), (8 bytes).
+    Removing nokia5110.o(.ARM.exidx.text.lcd_draw_text_medium), (8 bytes).
     Removing nokia5110.o(.ARM.exidx.text.lcd_copy), (8 bytes).
     Removing nokia5110.o(.ARM.exidx.text.itoa), (8 bytes).
     Removing nokia5110.o(.ARM.exidx.text.lcd_update), (8 bytes).
+    Removing nokia5110.o(.ARM.exidx.text.lcd_hello), (8 bytes).
+    Removing nokia5110.o(.ARM.exidx.text.lcd_zwolnienie), (8 bytes).
     Removing speaker.o(.text), (0 bytes).
     Removing speaker.o(.ARM.exidx.text.TPM0_Init_PCM), (8 bytes).
     Removing speaker.o(.ARM.exidx.text.__NVIC_SetPriority), (8 bytes).
@@ -281,6 +310,8 @@ Removing Unused input sections from the image.
     Removing delay.o(.ARM.exidx.text.delay_ms), (8 bytes).
     Removing bitmap.o(.text), (0 bytes).
     Removing font.o(.text), (0 bytes).
+    Removing font.o(.rodata.font3_ASCII), (208 bytes).
+    Removing font.o(.rodata.font2_ASCII), (472 bytes).
     Removing delay_us.o(.text), (0 bytes).
     Removing delay_us.o(.ARM.exidx.text.delay_us), (8 bytes).
     Removing system_mkl05z4.o(.text), (0 bytes).
@@ -289,7 +320,7 @@ Removing Unused input sections from the image.
     Removing system_mkl05z4.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
     Removing system_mkl05z4.o(.data.SystemCoreClock), (4 bytes).
 
-54 unused section(s) (total 596 bytes) removed from the image.
+59 unused section(s) (total 1300 bytes) removed from the image.
 
 ==============================================================================
 
@@ -454,70 +485,86 @@ Image Symbol Table
     __arm_cp.6_2                             0x000004c8   Number         4  speaker.o(.text.TPM0_IRQHandler)
     __arm_cp.6_3                             0x000004cc   Number         4  speaker.o(.text.TPM0_IRQHandler)
     __arm_cp.6_4                             0x000004d0   Number         4  speaker.o(.text.TPM0_IRQHandler)
-    __arm_cp.6_5                             0x000004d4   Number         4  speaker.o(.text.TPM0_IRQHandler)
-    [Anonymous Symbol]                       0x000004d8   Section        0  speaker.o(.text.TPM0_Init_PCM)
-    __arm_cp.0_1                             0x0000054c   Number         4  speaker.o(.text.TPM0_Init_PCM)
-    __arm_cp.0_2                             0x00000550   Number         4  speaker.o(.text.TPM0_Init_PCM)
-    [Anonymous Symbol]                       0x00000554   Section        0  hc_sr04.o(.text.TPM1_IRQHandler)
-    __arm_cp.5_0                             0x00000570   Number         4  hc_sr04.o(.text.TPM1_IRQHandler)
-    __arm_cp.5_1                             0x00000574   Number         4  hc_sr04.o(.text.TPM1_IRQHandler)
-    __arm_cp.5_2                             0x00000578   Number         4  hc_sr04.o(.text.TPM1_IRQHandler)
-    [Anonymous Symbol]                       0x0000057c   Section        0  hc_sr04.o(.text.TPM1_Init_InputCapture)
-    __arm_cp.0_0                             0x000005d0   Number         4  hc_sr04.o(.text.TPM1_Init_InputCapture)
-    __arm_cp.0_1                             0x000005d4   Number         4  hc_sr04.o(.text.TPM1_Init_InputCapture)
-    __arm_cp.0_2                             0x000005d8   Number         4  hc_sr04.o(.text.TPM1_Init_InputCapture)
-    [Anonymous Symbol]                       0x000005dc   Section        0  hc_sr04.o(.text.TRIG_GPIO_Init)
-    __arm_cp.6_0                             0x00000600   Number         4  hc_sr04.o(.text.TRIG_GPIO_Init)
-    __arm_cp.6_1                             0x00000604   Number         4  hc_sr04.o(.text.TRIG_GPIO_Init)
-    __arm_cp.6_2                             0x00000608   Number         4  hc_sr04.o(.text.TRIG_GPIO_Init)
-    [Anonymous Symbol]                       0x0000060c   Section        0  hc_sr04.o(.text.TRIG_inpulse)
-    __arm_cp.7_0                             0x00000630   Number         4  hc_sr04.o(.text.TRIG_inpulse)
-    __NVIC_ClearPendingIRQ                   0x00000635   Thumb Code    12  hc_sr04.o(.text.__NVIC_ClearPendingIRQ)
-    [Anonymous Symbol]                       0x00000634   Section        0  hc_sr04.o(.text.__NVIC_ClearPendingIRQ)
-    __NVIC_ClearPendingIRQ                   0x00000641   Thumb Code    16  speaker.o(.text.__NVIC_ClearPendingIRQ)
-    [Anonymous Symbol]                       0x00000640   Section        0  speaker.o(.text.__NVIC_ClearPendingIRQ)
-    __arm_cp.2_0                             0x0000064c   Number         4  speaker.o(.text.__NVIC_ClearPendingIRQ)
-    __NVIC_EnableIRQ                         0x00000651   Thumb Code    12  pit.o(.text.__NVIC_EnableIRQ)
-    [Anonymous Symbol]                       0x00000650   Section        0  pit.o(.text.__NVIC_EnableIRQ)
-    __NVIC_EnableIRQ                         0x0000065d   Thumb Code    12  hc_sr04.o(.text.__NVIC_EnableIRQ)
-    [Anonymous Symbol]                       0x0000065c   Section        0  hc_sr04.o(.text.__NVIC_EnableIRQ)
-    __NVIC_EnableIRQ                         0x00000669   Thumb Code    16  speaker.o(.text.__NVIC_EnableIRQ)
-    [Anonymous Symbol]                       0x00000668   Section        0  speaker.o(.text.__NVIC_EnableIRQ)
-    __arm_cp.3_0                             0x00000674   Number         4  speaker.o(.text.__NVIC_EnableIRQ)
-    __NVIC_SetPriority                       0x00000679   Thumb Code    24  pit.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x00000678   Section        0  pit.o(.text.__NVIC_SetPriority)
-    __arm_cp.1_0                             0x0000068c   Number         4  pit.o(.text.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x00000691   Thumb Code    20  hc_sr04.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x00000690   Section        0  hc_sr04.o(.text.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x000006a5   Thumb Code    24  speaker.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x000006a4   Section        0  speaker.o(.text.__NVIC_SetPriority)
-    __arm_cp.1_0                             0x000006b8   Number         4  speaker.o(.text.__NVIC_SetPriority)
-    [Anonymous Symbol]                       0x000006bc   Section        0  speaker.o(.text.change_wave_period)
-    __arm_cp.5_0                             0x000006c8   Number         4  speaker.o(.text.change_wave_period)
-    [Anonymous Symbol]                       0x000006cc   Section        0  delay.o(.text.delay_ms)
-    __arm_cp.0_0                             0x000006fc   Number         4  delay.o(.text.delay_ms)
-    [Anonymous Symbol]                       0x00000700   Section        0  delay_us.o(.text.delay_us)
-    [Anonymous Symbol]                       0x0000072e   Section        0  nokia5110.o(.text.itoa)
-    [Anonymous Symbol]                       0x000007a4   Section        0  nokia5110.o(.text.lcd_clear)
-    [Anonymous Symbol]                       0x000007b4   Section        0  nokia5110.o(.text.lcd_cmd)
-    __arm_cp.3_0                             0x000007d8   Number         4  nokia5110.o(.text.lcd_cmd)
-    [Anonymous Symbol]                       0x000007dc   Section        0  nokia5110.o(.text.lcd_copy)
-    [Anonymous Symbol]                       0x00000810   Section        0  nokia5110.o(.text.lcd_draw_bitmap)
-    [Anonymous Symbol]                       0x00000820   Section        0  nokia5110.o(.text.lcd_draw_text)
-    __arm_cp.8_0                             0x00000874   Number         4  nokia5110.o(.text.lcd_draw_text)
-    __arm_cp.8_1                             0x00000878   Number         4  nokia5110.o(.text.lcd_draw_text)
-    [Anonymous Symbol]                       0x0000087c   Section        0  nokia5110.o(.text.lcd_reset)
-    __arm_cp.1_0                             0x00000898   Number         4  nokia5110.o(.text.lcd_reset)
-    [Anonymous Symbol]                       0x0000089c   Section        0  nokia5110.o(.text.lcd_setup)
-    [Anonymous Symbol]                       0x000008c4   Section        0  nokia5110.o(.text.lcd_update)
-    __arm_cp.11_0                            0x000008e8   Number         4  nokia5110.o(.text.lcd_update)
-    [Anonymous Symbol]                       0x000008ec   Section        0  main.o(.text.main)
-    __arm_cp.0_0                             0x00000938   Number         4  main.o(.text.main)
-    [Anonymous Symbol]                       0x0000093c   Section        0  nokia5110.o(.text.spi_send)
-    __arm_cp.2_0                             0x00000954   Number         4  nokia5110.o(.text.spi_send)
-    .text_divfast                            0x00000958   Section      502  aeabi_sdivfast.o(.text_divfast)
-    music                                    0x00000f28   Data        6004  speaker.o(.rodata.music)
-    [Anonymous Symbol]                       0x00000f28   Section        0  speaker.o(.rodata.music)
+    [Anonymous Symbol]                       0x000004d4   Section        0  speaker.o(.text.TPM0_Init_PCM)
+    __arm_cp.0_1                             0x00000548   Number         4  speaker.o(.text.TPM0_Init_PCM)
+    __arm_cp.0_2                             0x0000054c   Number         4  speaker.o(.text.TPM0_Init_PCM)
+    [Anonymous Symbol]                       0x00000550   Section        0  hc_sr04.o(.text.TPM1_IRQHandler)
+    __arm_cp.5_0                             0x0000056c   Number         4  hc_sr04.o(.text.TPM1_IRQHandler)
+    __arm_cp.5_1                             0x00000570   Number         4  hc_sr04.o(.text.TPM1_IRQHandler)
+    __arm_cp.5_2                             0x00000574   Number         4  hc_sr04.o(.text.TPM1_IRQHandler)
+    [Anonymous Symbol]                       0x00000578   Section        0  hc_sr04.o(.text.TPM1_Init_InputCapture)
+    __arm_cp.0_0                             0x000005cc   Number         4  hc_sr04.o(.text.TPM1_Init_InputCapture)
+    __arm_cp.0_1                             0x000005d0   Number         4  hc_sr04.o(.text.TPM1_Init_InputCapture)
+    __arm_cp.0_2                             0x000005d4   Number         4  hc_sr04.o(.text.TPM1_Init_InputCapture)
+    [Anonymous Symbol]                       0x000005d8   Section        0  hc_sr04.o(.text.TRIG_GPIO_Init)
+    __arm_cp.6_0                             0x000005fc   Number         4  hc_sr04.o(.text.TRIG_GPIO_Init)
+    __arm_cp.6_1                             0x00000600   Number         4  hc_sr04.o(.text.TRIG_GPIO_Init)
+    __arm_cp.6_2                             0x00000604   Number         4  hc_sr04.o(.text.TRIG_GPIO_Init)
+    [Anonymous Symbol]                       0x00000608   Section        0  hc_sr04.o(.text.TRIG_inpulse)
+    __arm_cp.7_0                             0x00000624   Number         4  hc_sr04.o(.text.TRIG_inpulse)
+    __NVIC_ClearPendingIRQ                   0x00000629   Thumb Code    12  hc_sr04.o(.text.__NVIC_ClearPendingIRQ)
+    [Anonymous Symbol]                       0x00000628   Section        0  hc_sr04.o(.text.__NVIC_ClearPendingIRQ)
+    __NVIC_ClearPendingIRQ                   0x00000635   Thumb Code    16  speaker.o(.text.__NVIC_ClearPendingIRQ)
+    [Anonymous Symbol]                       0x00000634   Section        0  speaker.o(.text.__NVIC_ClearPendingIRQ)
+    __arm_cp.2_0                             0x00000640   Number         4  speaker.o(.text.__NVIC_ClearPendingIRQ)
+    __NVIC_EnableIRQ                         0x00000645   Thumb Code    12  pit.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x00000644   Section        0  pit.o(.text.__NVIC_EnableIRQ)
+    __NVIC_EnableIRQ                         0x00000651   Thumb Code    12  hc_sr04.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x00000650   Section        0  hc_sr04.o(.text.__NVIC_EnableIRQ)
+    __NVIC_EnableIRQ                         0x0000065d   Thumb Code    16  speaker.o(.text.__NVIC_EnableIRQ)
+    [Anonymous Symbol]                       0x0000065c   Section        0  speaker.o(.text.__NVIC_EnableIRQ)
+    __arm_cp.3_0                             0x00000668   Number         4  speaker.o(.text.__NVIC_EnableIRQ)
+    __NVIC_SetPriority                       0x0000066d   Thumb Code    24  pit.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x0000066c   Section        0  pit.o(.text.__NVIC_SetPriority)
+    __arm_cp.1_0                             0x00000680   Number         4  pit.o(.text.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x00000685   Thumb Code    20  hc_sr04.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x00000684   Section        0  hc_sr04.o(.text.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x00000699   Thumb Code    24  speaker.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x00000698   Section        0  speaker.o(.text.__NVIC_SetPriority)
+    __arm_cp.1_0                             0x000006ac   Number         4  speaker.o(.text.__NVIC_SetPriority)
+    [Anonymous Symbol]                       0x000006b0   Section        0  speaker.o(.text.change_wave_period)
+    __arm_cp.5_0                             0x000006c4   Number         4  speaker.o(.text.change_wave_period)
+    [Anonymous Symbol]                       0x000006c8   Section        0  delay.o(.text.delay_ms)
+    __arm_cp.0_0                             0x000006f8   Number         4  delay.o(.text.delay_ms)
+    [Anonymous Symbol]                       0x000006fc   Section        0  delay_us.o(.text.delay_us)
+    [Anonymous Symbol]                       0x0000072a   Section        0  nokia5110.o(.text.itoa)
+    [Anonymous Symbol]                       0x000007a0   Section        0  nokia5110.o(.text.lcd_clear)
+    [Anonymous Symbol]                       0x000007b0   Section        0  nokia5110.o(.text.lcd_cmd)
+    __arm_cp.3_0                             0x000007d4   Number         4  nokia5110.o(.text.lcd_cmd)
+    [Anonymous Symbol]                       0x000007d8   Section        0  nokia5110.o(.text.lcd_copy)
+    [Anonymous Symbol]                       0x0000080c   Section        0  nokia5110.o(.text.lcd_draw_bitmap)
+    [Anonymous Symbol]                       0x0000081c   Section        0  nokia5110.o(.text.lcd_draw_text_medium)
+    __arm_cp.9_1                             0x00000870   Number         4  nokia5110.o(.text.lcd_draw_text_medium)
+    [Anonymous Symbol]                       0x00000874   Section        0  nokia5110.o(.text.lcd_draw_text_small)
+    __arm_cp.8_0                             0x000008c8   Number         4  nokia5110.o(.text.lcd_draw_text_small)
+    __arm_cp.8_1                             0x000008cc   Number         4  nokia5110.o(.text.lcd_draw_text_small)
+    [Anonymous Symbol]                       0x000008d0   Section        0  nokia5110.o(.text.lcd_hello)
+    __arm_cp.13_0                            0x00000938   Number         4  nokia5110.o(.text.lcd_hello)
+    __arm_cp.13_1                            0x0000093c   Number         4  nokia5110.o(.text.lcd_hello)
+    [Anonymous Symbol]                       0x00000984   Section        0  nokia5110.o(.text.lcd_reset)
+    __arm_cp.1_0                             0x000009a0   Number         4  nokia5110.o(.text.lcd_reset)
+    [Anonymous Symbol]                       0x000009a4   Section        0  nokia5110.o(.text.lcd_setup)
+    [Anonymous Symbol]                       0x000009cc   Section        0  nokia5110.o(.text.lcd_update)
+    __arm_cp.12_0                            0x00000aac   Number         4  nokia5110.o(.text.lcd_update)
+    __arm_cp.12_1                            0x00000ab0   Number         4  nokia5110.o(.text.lcd_update)
+    __arm_cp.12_2                            0x00000ab4   Number         4  nokia5110.o(.text.lcd_update)
+    __arm_cp.12_3                            0x00000ab8   Number         4  nokia5110.o(.text.lcd_update)
+    __arm_cp.12_4                            0x00000abc   Number         4  nokia5110.o(.text.lcd_update)
+    __arm_cp.12_5                            0x00000ac0   Number         4  nokia5110.o(.text.lcd_update)
+    __arm_cp.12_6                            0x00000ac4   Number         4  nokia5110.o(.text.lcd_update)
+    __arm_cp.12_7                            0x00000ac8   Number         4  nokia5110.o(.text.lcd_update)
+    __arm_cp.12_8                            0x00000acc   Number         4  nokia5110.o(.text.lcd_update)
+    __arm_cp.12_9                            0x00000ad0   Number         4  nokia5110.o(.text.lcd_update)
+    __arm_cp.12_10                           0x00000ad4   Number         4  nokia5110.o(.text.lcd_update)
+    [Anonymous Symbol]                       0x00000ad8   Section        0  nokia5110.o(.text.lcd_zwolnienie)
+    __arm_cp.14_3                            0x00000b44   Number         4  nokia5110.o(.text.lcd_zwolnienie)
+    __arm_cp.14_4                            0x00000b48   Number         4  nokia5110.o(.text.lcd_zwolnienie)
+    [Anonymous Symbol]                       0x00000b4c   Section        0  main.o(.text.main)
+    [Anonymous Symbol]                       0x00000b88   Section        0  nokia5110.o(.text.spi_send)
+    __arm_cp.2_0                             0x00000ba0   Number         4  nokia5110.o(.text.spi_send)
+    .text_divfast                            0x00000ba4   Section      502  aeabi_sdivfast.o(.text_divfast)
+    music                                    0x000026c0   Data        8196  speaker.o(.rodata.music)
+    [Anonymous Symbol]                       0x000026c0   Section        0  speaker.o(.rodata.music)
     .bss                                     0x1ffffc00   Section       96  libspace.o(.bss)
     lcd_buffer                               0x1ffffc60   Data         504  nokia5110.o(.bss.lcd_buffer)
     [Anonymous Symbol]                       0x1ffffc60   Section        0  nokia5110.o(.bss.lcd_buffer)
@@ -691,32 +738,47 @@ Image Symbol Table
     PIT_Init_Generator                       0x00000381   Thumb Code    92  pit.o(.text.PIT_Init_Generator)
     TPM1_GetVal                              0x000003dd   Thumb Code    16  hc_sr04.o(.text.TPM1_GetVal)
     SystemInit                               0x00000411   Thumb Code    76  system_mkl05z4.o(.text.SystemInit)
-    TPM0_IRQHandler                          0x0000045d   Thumb Code   124  speaker.o(.text.TPM0_IRQHandler)
-    TPM0_Init_PCM                            0x000004d9   Thumb Code   124  speaker.o(.text.TPM0_Init_PCM)
-    TPM1_IRQHandler                          0x00000555   Thumb Code    40  hc_sr04.o(.text.TPM1_IRQHandler)
-    TPM1_Init_InputCapture                   0x0000057d   Thumb Code    96  hc_sr04.o(.text.TPM1_Init_InputCapture)
-    TRIG_GPIO_Init                           0x000005dd   Thumb Code    48  hc_sr04.o(.text.TRIG_GPIO_Init)
-    TRIG_inpulse                             0x0000060d   Thumb Code    40  hc_sr04.o(.text.TRIG_inpulse)
-    change_wave_period                       0x000006bd   Thumb Code    16  speaker.o(.text.change_wave_period)
-    delay_ms                                 0x000006cd   Thumb Code    52  delay.o(.text.delay_ms)
-    delay_us                                 0x00000701   Thumb Code    46  delay_us.o(.text.delay_us)
-    itoa                                     0x0000072f   Thumb Code   118  nokia5110.o(.text.itoa)
-    lcd_clear                                0x000007a5   Thumb Code    16  nokia5110.o(.text.lcd_clear)
-    lcd_cmd                                  0x000007b5   Thumb Code    40  nokia5110.o(.text.lcd_cmd)
-    lcd_copy                                 0x000007dd   Thumb Code    52  nokia5110.o(.text.lcd_copy)
-    lcd_draw_bitmap                          0x00000811   Thumb Code    16  nokia5110.o(.text.lcd_draw_bitmap)
-    lcd_draw_text                            0x00000821   Thumb Code    92  nokia5110.o(.text.lcd_draw_text)
-    lcd_reset                                0x0000087d   Thumb Code    32  nokia5110.o(.text.lcd_reset)
-    lcd_setup                                0x0000089d   Thumb Code    38  nokia5110.o(.text.lcd_setup)
-    lcd_update                               0x000008c5   Thumb Code    40  nokia5110.o(.text.lcd_update)
-    main                                     0x000008ed   Thumb Code    80  main.o(.text.main)
-    spi_send                                 0x0000093d   Thumb Code    28  nokia5110.o(.text.spi_send)
-    __aeabi_uidiv                            0x00000959   Thumb Code    68  aeabi_sdivfast.o(.text_divfast)
-    __aeabi_idiv                             0x0000099d   Thumb Code   434  aeabi_sdivfast.o(.text_divfast)
-    font_ASCII                               0x00000b4e   Data         480  font.o(.rodata.font_ASCII)
-    logo                                     0x00000d2e   Data         504  bitmap.o(.rodata.logo)
-    Region$$Table$$Base                      0x0000269c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000026ac   Number         0  anon$$obj.o(Region$$Table)
+    TPM0_IRQHandler                          0x0000045d   Thumb Code   120  speaker.o(.text.TPM0_IRQHandler)
+    TPM0_Init_PCM                            0x000004d5   Thumb Code   124  speaker.o(.text.TPM0_Init_PCM)
+    TPM1_IRQHandler                          0x00000551   Thumb Code    40  hc_sr04.o(.text.TPM1_IRQHandler)
+    TPM1_Init_InputCapture                   0x00000579   Thumb Code    96  hc_sr04.o(.text.TPM1_Init_InputCapture)
+    TRIG_GPIO_Init                           0x000005d9   Thumb Code    48  hc_sr04.o(.text.TRIG_GPIO_Init)
+    TRIG_inpulse                             0x00000609   Thumb Code    32  hc_sr04.o(.text.TRIG_inpulse)
+    change_wave_period                       0x000006b1   Thumb Code    24  speaker.o(.text.change_wave_period)
+    delay_ms                                 0x000006c9   Thumb Code    52  delay.o(.text.delay_ms)
+    delay_us                                 0x000006fd   Thumb Code    46  delay_us.o(.text.delay_us)
+    itoa                                     0x0000072b   Thumb Code   118  nokia5110.o(.text.itoa)
+    lcd_clear                                0x000007a1   Thumb Code    16  nokia5110.o(.text.lcd_clear)
+    lcd_cmd                                  0x000007b1   Thumb Code    40  nokia5110.o(.text.lcd_cmd)
+    lcd_copy                                 0x000007d9   Thumb Code    52  nokia5110.o(.text.lcd_copy)
+    lcd_draw_bitmap                          0x0000080d   Thumb Code    16  nokia5110.o(.text.lcd_draw_bitmap)
+    lcd_draw_text_medium                     0x0000081d   Thumb Code    88  nokia5110.o(.text.lcd_draw_text_medium)
+    lcd_draw_text_small                      0x00000875   Thumb Code    92  nokia5110.o(.text.lcd_draw_text_small)
+    lcd_hello                                0x000008d1   Thumb Code   180  nokia5110.o(.text.lcd_hello)
+    lcd_reset                                0x00000985   Thumb Code    32  nokia5110.o(.text.lcd_reset)
+    lcd_setup                                0x000009a5   Thumb Code    38  nokia5110.o(.text.lcd_setup)
+    lcd_update                               0x000009cd   Thumb Code   268  nokia5110.o(.text.lcd_update)
+    lcd_zwolnienie                           0x00000ad9   Thumb Code   116  nokia5110.o(.text.lcd_zwolnienie)
+    main                                     0x00000b4d   Thumb Code    58  main.o(.text.main)
+    spi_send                                 0x00000b89   Thumb Code    28  nokia5110.o(.text.spi_send)
+    __aeabi_uidiv                            0x00000ba5   Thumb Code    68  aeabi_sdivfast.o(.text_divfast)
+    __aeabi_idiv                             0x00000be9   Thumb Code   434  aeabi_sdivfast.o(.text_divfast)
+    font1_ASCII                              0x00000d9a   Data         413  font.o(.rodata.font1_ASCII)
+    font_ASCII                               0x00000f37   Data         480  font.o(.rodata.font_ASCII)
+    logo                                     0x00001117   Data         504  bitmap.o(.rodata.logo)
+    logo1                                    0x0000130f   Data         504  bitmap.o(.rodata.logo1)
+    logo10                                   0x00001507   Data         504  bitmap.o(.rodata.logo10)
+    logo2                                    0x000016ff   Data         504  bitmap.o(.rodata.logo2)
+    logo3                                    0x000018f7   Data         504  bitmap.o(.rodata.logo3)
+    logo4                                    0x00001aef   Data         504  bitmap.o(.rodata.logo4)
+    logo5                                    0x00001ce7   Data         504  bitmap.o(.rodata.logo5)
+    logo6                                    0x00001edf   Data         504  bitmap.o(.rodata.logo6)
+    logo7                                    0x000020d7   Data         504  bitmap.o(.rodata.logo7)
+    logo8                                    0x000022cf   Data         504  bitmap.o(.rodata.logo8)
+    logo9                                    0x000024c7   Data         504  bitmap.o(.rodata.logo9)
+    please                                   0x000046c4   Data         504  bitmap.o(.rodata.please)
+    Region$$Table$$Base                      0x000048bc   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000048cc   Number         0  anon$$obj.o(Region$$Table)
     __libspace_start                         0x1ffffc00   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x1ffffc60   Data           0  libspace.o(.bss)
 
@@ -728,70 +790,70 @@ Memory Map of the image
 
   Image Entry point : 0x000000c1
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000026ac, Max: 0x00008000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000048cc, Max: 0x00008000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000026ac, Max: 0x00008000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000048cc, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x00000000   0x000000c0   Data   RO          148    RESET               startup_mkl05z4.o
-    0x000000c0   0x000000c0   0x00000008   Code   RO          189  * !!!main             c_p.l(__main.o)
-    0x000000c8   0x000000c8   0x0000003c   Code   RO          364    !!!scatter          c_p.l(__scatter.o)
-    0x00000104   0x00000104   0x0000001c   Code   RO          366    !!handler_zi        c_p.l(__scatter_zi.o)
-    0x00000120   0x00000120   0x00000002   Code   RO          227    .ARM.Collect$$libinit$$00000000  c_p.l(libinit.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          241    .ARM.Collect$$libinit$$00000002  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          243    .ARM.Collect$$libinit$$00000004  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          246    .ARM.Collect$$libinit$$0000000A  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          248    .ARM.Collect$$libinit$$0000000C  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          250    .ARM.Collect$$libinit$$0000000E  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          253    .ARM.Collect$$libinit$$00000011  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          255    .ARM.Collect$$libinit$$00000013  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          257    .ARM.Collect$$libinit$$00000015  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          259    .ARM.Collect$$libinit$$00000017  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          261    .ARM.Collect$$libinit$$00000019  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          263    .ARM.Collect$$libinit$$0000001B  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          265    .ARM.Collect$$libinit$$0000001D  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          267    .ARM.Collect$$libinit$$0000001F  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          269    .ARM.Collect$$libinit$$00000021  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          271    .ARM.Collect$$libinit$$00000023  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          273    .ARM.Collect$$libinit$$00000025  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          277    .ARM.Collect$$libinit$$0000002C  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          279    .ARM.Collect$$libinit$$0000002E  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          281    .ARM.Collect$$libinit$$00000030  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000000   Code   RO          283    .ARM.Collect$$libinit$$00000032  c_p.l(libinit2.o)
-    0x00000122   0x00000122   0x00000002   Code   RO          284    .ARM.Collect$$libinit$$00000033  c_p.l(libinit2.o)
-    0x00000124   0x00000124   0x00000002   Code   RO          319    .ARM.Collect$$libshutdown$$00000000  c_p.l(libshutdown.o)
-    0x00000126   0x00000126   0x00000000   Code   RO          347    .ARM.Collect$$libshutdown$$00000002  c_p.l(libshutdown2.o)
-    0x00000126   0x00000126   0x00000000   Code   RO          349    .ARM.Collect$$libshutdown$$00000004  c_p.l(libshutdown2.o)
-    0x00000126   0x00000126   0x00000000   Code   RO          352    .ARM.Collect$$libshutdown$$00000007  c_p.l(libshutdown2.o)
-    0x00000126   0x00000126   0x00000000   Code   RO          355    .ARM.Collect$$libshutdown$$0000000A  c_p.l(libshutdown2.o)
-    0x00000126   0x00000126   0x00000000   Code   RO          357    .ARM.Collect$$libshutdown$$0000000C  c_p.l(libshutdown2.o)
-    0x00000126   0x00000126   0x00000000   Code   RO          360    .ARM.Collect$$libshutdown$$0000000F  c_p.l(libshutdown2.o)
-    0x00000126   0x00000126   0x00000002   Code   RO          361    .ARM.Collect$$libshutdown$$00000010  c_p.l(libshutdown2.o)
-    0x00000128   0x00000128   0x00000000   Code   RO          191    .ARM.Collect$$rtentry$$00000000  c_p.l(__rtentry.o)
-    0x00000128   0x00000128   0x00000000   Code   RO          197    .ARM.Collect$$rtentry$$00000002  c_p.l(__rtentry2.o)
-    0x00000128   0x00000128   0x00000006   Code   RO          209    .ARM.Collect$$rtentry$$00000004  c_p.l(__rtentry4.o)
-    0x0000012e   0x0000012e   0x00000000   Code   RO          199    .ARM.Collect$$rtentry$$00000009  c_p.l(__rtentry2.o)
-    0x0000012e   0x0000012e   0x00000004   Code   RO          200    .ARM.Collect$$rtentry$$0000000A  c_p.l(__rtentry2.o)
-    0x00000132   0x00000132   0x00000000   Code   RO          202    .ARM.Collect$$rtentry$$0000000C  c_p.l(__rtentry2.o)
-    0x00000132   0x00000132   0x00000008   Code   RO          203    .ARM.Collect$$rtentry$$0000000D  c_p.l(__rtentry2.o)
-    0x0000013a   0x0000013a   0x00000002   Code   RO          232    .ARM.Collect$$rtexit$$00000000  c_p.l(rtexit.o)
-    0x0000013c   0x0000013c   0x00000000   Code   RO          290    .ARM.Collect$$rtexit$$00000002  c_p.l(rtexit2.o)
-    0x0000013c   0x0000013c   0x00000004   Code   RO          291    .ARM.Collect$$rtexit$$00000003  c_p.l(rtexit2.o)
-    0x00000140   0x00000140   0x00000006   Code   RO          292    .ARM.Collect$$rtexit$$00000004  c_p.l(rtexit2.o)
+    0x00000000   0x00000000   0x000000c0   Data   RO          168    RESET               startup_mkl05z4.o
+    0x000000c0   0x000000c0   0x00000008   Code   RO          209  * !!!main             c_p.l(__main.o)
+    0x000000c8   0x000000c8   0x0000003c   Code   RO          384    !!!scatter          c_p.l(__scatter.o)
+    0x00000104   0x00000104   0x0000001c   Code   RO          386    !!handler_zi        c_p.l(__scatter_zi.o)
+    0x00000120   0x00000120   0x00000002   Code   RO          247    .ARM.Collect$$libinit$$00000000  c_p.l(libinit.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          261    .ARM.Collect$$libinit$$00000002  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          263    .ARM.Collect$$libinit$$00000004  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          266    .ARM.Collect$$libinit$$0000000A  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          268    .ARM.Collect$$libinit$$0000000C  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          270    .ARM.Collect$$libinit$$0000000E  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          273    .ARM.Collect$$libinit$$00000011  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          275    .ARM.Collect$$libinit$$00000013  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          277    .ARM.Collect$$libinit$$00000015  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          279    .ARM.Collect$$libinit$$00000017  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          281    .ARM.Collect$$libinit$$00000019  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          283    .ARM.Collect$$libinit$$0000001B  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          285    .ARM.Collect$$libinit$$0000001D  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          287    .ARM.Collect$$libinit$$0000001F  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          289    .ARM.Collect$$libinit$$00000021  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          291    .ARM.Collect$$libinit$$00000023  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          293    .ARM.Collect$$libinit$$00000025  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          297    .ARM.Collect$$libinit$$0000002C  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          299    .ARM.Collect$$libinit$$0000002E  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          301    .ARM.Collect$$libinit$$00000030  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000000   Code   RO          303    .ARM.Collect$$libinit$$00000032  c_p.l(libinit2.o)
+    0x00000122   0x00000122   0x00000002   Code   RO          304    .ARM.Collect$$libinit$$00000033  c_p.l(libinit2.o)
+    0x00000124   0x00000124   0x00000002   Code   RO          339    .ARM.Collect$$libshutdown$$00000000  c_p.l(libshutdown.o)
+    0x00000126   0x00000126   0x00000000   Code   RO          367    .ARM.Collect$$libshutdown$$00000002  c_p.l(libshutdown2.o)
+    0x00000126   0x00000126   0x00000000   Code   RO          369    .ARM.Collect$$libshutdown$$00000004  c_p.l(libshutdown2.o)
+    0x00000126   0x00000126   0x00000000   Code   RO          372    .ARM.Collect$$libshutdown$$00000007  c_p.l(libshutdown2.o)
+    0x00000126   0x00000126   0x00000000   Code   RO          375    .ARM.Collect$$libshutdown$$0000000A  c_p.l(libshutdown2.o)
+    0x00000126   0x00000126   0x00000000   Code   RO          377    .ARM.Collect$$libshutdown$$0000000C  c_p.l(libshutdown2.o)
+    0x00000126   0x00000126   0x00000000   Code   RO          380    .ARM.Collect$$libshutdown$$0000000F  c_p.l(libshutdown2.o)
+    0x00000126   0x00000126   0x00000002   Code   RO          381    .ARM.Collect$$libshutdown$$00000010  c_p.l(libshutdown2.o)
+    0x00000128   0x00000128   0x00000000   Code   RO          211    .ARM.Collect$$rtentry$$00000000  c_p.l(__rtentry.o)
+    0x00000128   0x00000128   0x00000000   Code   RO          217    .ARM.Collect$$rtentry$$00000002  c_p.l(__rtentry2.o)
+    0x00000128   0x00000128   0x00000006   Code   RO          229    .ARM.Collect$$rtentry$$00000004  c_p.l(__rtentry4.o)
+    0x0000012e   0x0000012e   0x00000000   Code   RO          219    .ARM.Collect$$rtentry$$00000009  c_p.l(__rtentry2.o)
+    0x0000012e   0x0000012e   0x00000004   Code   RO          220    .ARM.Collect$$rtentry$$0000000A  c_p.l(__rtentry2.o)
+    0x00000132   0x00000132   0x00000000   Code   RO          222    .ARM.Collect$$rtentry$$0000000C  c_p.l(__rtentry2.o)
+    0x00000132   0x00000132   0x00000008   Code   RO          223    .ARM.Collect$$rtentry$$0000000D  c_p.l(__rtentry2.o)
+    0x0000013a   0x0000013a   0x00000002   Code   RO          252    .ARM.Collect$$rtexit$$00000000  c_p.l(rtexit.o)
+    0x0000013c   0x0000013c   0x00000000   Code   RO          310    .ARM.Collect$$rtexit$$00000002  c_p.l(rtexit2.o)
+    0x0000013c   0x0000013c   0x00000004   Code   RO          311    .ARM.Collect$$rtexit$$00000003  c_p.l(rtexit2.o)
+    0x00000140   0x00000140   0x00000006   Code   RO          312    .ARM.Collect$$rtexit$$00000004  c_p.l(rtexit2.o)
     0x00000146   0x00000146   0x00000002   PAD
-    0x00000148   0x00000148   0x00000038   Code   RO          173    .emb_text           c_p.l(rt_memcpy.o)
-    0x00000180   0x00000180   0x00000034   Code   RO          150    .text               startup_mkl05z4.o
-    0x000001b4   0x000001b4   0x00000082   Code   RO          174    .text               c_p.l(rt_memcpy.o)
-    0x00000236   0x00000236   0x00000040   Code   RO          177    .text               c_p.l(rt_memclr.o)
-    0x00000276   0x00000276   0x00000006   Code   RO          187    .text               c_p.l(heapauxi.o)
-    0x0000027c   0x0000027c   0x0000003e   Code   RO          213    .text               c_p.l(sys_stackheap_outer.o)
-    0x000002ba   0x000002ba   0x00000010   Code   RO          216    .text               c_p.l(exit.o)
+    0x00000148   0x00000148   0x00000038   Code   RO          193    .emb_text           c_p.l(rt_memcpy.o)
+    0x00000180   0x00000180   0x00000034   Code   RO          170    .text               startup_mkl05z4.o
+    0x000001b4   0x000001b4   0x00000082   Code   RO          194    .text               c_p.l(rt_memcpy.o)
+    0x00000236   0x00000236   0x00000040   Code   RO          197    .text               c_p.l(rt_memclr.o)
+    0x00000276   0x00000276   0x00000006   Code   RO          207    .text               c_p.l(heapauxi.o)
+    0x0000027c   0x0000027c   0x0000003e   Code   RO          233    .text               c_p.l(sys_stackheap_outer.o)
+    0x000002ba   0x000002ba   0x00000010   Code   RO          236    .text               c_p.l(exit.o)
     0x000002ca   0x000002ca   0x00000002   PAD
-    0x000002cc   0x000002cc   0x00000008   Code   RO          228    .text               c_p.l(libspace.o)
-    0x000002d4   0x000002d4   0x0000000c   Code   RO          285    .text               c_p.l(sys_exit.o)
-    0x000002e0   0x000002e0   0x00000002   Code   RO          308    .text               c_p.l(use_no_semi.o)
-    0x000002e2   0x000002e2   0x00000000   Code   RO          310    .text               c_p.l(indicate_semi.o)
+    0x000002cc   0x000002cc   0x00000008   Code   RO          248    .text               c_p.l(libspace.o)
+    0x000002d4   0x000002d4   0x0000000c   Code   RO          305    .text               c_p.l(sys_exit.o)
+    0x000002e0   0x000002e0   0x00000002   Code   RO          328    .text               c_p.l(use_no_semi.o)
+    0x000002e2   0x000002e2   0x00000000   Code   RO          330    .text               c_p.l(indicate_semi.o)
     0x000002e2   0x000002e2   0x00000002   PAD
     0x000002e4   0x000002e4   0x00000084   Code   RO           57    .text.InitSPI       nokia5110.o
     0x00000368   0x00000368   0x00000018   Code   RO           21    .text.PIT_IRQHandler  pit.o
@@ -799,63 +861,79 @@ Memory Map of the image
     0x000003dc   0x000003dc   0x00000010   Code   RO           40    .text.TPM1_GetVal   hc_sr04.o
     0x000003ec   0x000003ec   0x0000000c   Code   RO           15    .text.__NVIC_ClearPendingIRQ  pit.o
     0x000003f8   0x000003f8   0x00000008   PAD
-    0x00000400   0x00000400   0x00000010   Code   RO          149    .ARM.__at_0x400     startup_mkl05z4.o
-    0x00000410   0x00000410   0x0000004c   Code   RO          159    .text.SystemInit    system_mkl05z4.o
-    0x0000045c   0x0000045c   0x0000007c   Code   RO          103    .text.TPM0_IRQHandler  speaker.o
-    0x000004d8   0x000004d8   0x0000007c   Code   RO           91    .text.TPM0_Init_PCM  speaker.o
-    0x00000554   0x00000554   0x00000028   Code   RO           42    .text.TPM1_IRQHandler  hc_sr04.o
-    0x0000057c   0x0000057c   0x00000060   Code   RO           32    .text.TPM1_Init_InputCapture  hc_sr04.o
-    0x000005dc   0x000005dc   0x00000030   Code   RO           44    .text.TRIG_GPIO_Init  hc_sr04.o
-    0x0000060c   0x0000060c   0x00000028   Code   RO           46    .text.TRIG_inpulse  hc_sr04.o
-    0x00000634   0x00000634   0x0000000c   Code   RO           36    .text.__NVIC_ClearPendingIRQ  hc_sr04.o
-    0x00000640   0x00000640   0x00000010   Code   RO           95    .text.__NVIC_ClearPendingIRQ  speaker.o
-    0x00000650   0x00000650   0x0000000c   Code   RO           17    .text.__NVIC_EnableIRQ  pit.o
-    0x0000065c   0x0000065c   0x0000000c   Code   RO           38    .text.__NVIC_EnableIRQ  hc_sr04.o
-    0x00000668   0x00000668   0x00000010   Code   RO           97    .text.__NVIC_EnableIRQ  speaker.o
-    0x00000678   0x00000678   0x00000018   Code   RO           13    .text.__NVIC_SetPriority  pit.o
-    0x00000690   0x00000690   0x00000014   Code   RO           34    .text.__NVIC_SetPriority  hc_sr04.o
-    0x000006a4   0x000006a4   0x00000018   Code   RO           93    .text.__NVIC_SetPriority  speaker.o
-    0x000006bc   0x000006bc   0x00000010   Code   RO          101    .text.change_wave_period  speaker.o
-    0x000006cc   0x000006cc   0x00000034   Code   RO          118    .text.delay_ms      delay.o
-    0x00000700   0x00000700   0x0000002e   Code   RO          139    .text.delay_us      delay_us.o
-    0x0000072e   0x0000072e   0x00000076   Code   RO           77    .text.itoa          nokia5110.o
-    0x000007a4   0x000007a4   0x00000010   Code   RO           69    .text.lcd_clear     nokia5110.o
-    0x000007b4   0x000007b4   0x00000028   Code   RO           63    .text.lcd_cmd       nokia5110.o
-    0x000007dc   0x000007dc   0x00000034   Code   RO           75    .text.lcd_copy      nokia5110.o
-    0x00000810   0x00000810   0x00000010   Code   RO           71    .text.lcd_draw_bitmap  nokia5110.o
-    0x00000820   0x00000820   0x0000005c   Code   RO           73    .text.lcd_draw_text  nokia5110.o
-    0x0000087c   0x0000087c   0x00000020   Code   RO           59    .text.lcd_reset     nokia5110.o
-    0x0000089c   0x0000089c   0x00000026   Code   RO           67    .text.lcd_setup     nokia5110.o
-    0x000008c2   0x000008c2   0x00000002   PAD
-    0x000008c4   0x000008c4   0x00000028   Code   RO           79    .text.lcd_update    nokia5110.o
-    0x000008ec   0x000008ec   0x00000050   Code   RO            2    .text.main          main.o
-    0x0000093c   0x0000093c   0x0000001c   Code   RO           61    .text.spi_send      nokia5110.o
-    0x00000958   0x00000958   0x000001f6   Code   RO          180    .text_divfast       c_p.l(aeabi_sdivfast.o)
-    0x00000b4e   0x00000b4e   0x000001e0   Data   RO          133    .rodata.font_ASCII  font.o
-    0x00000d2e   0x00000d2e   0x000001f8   Data   RO          127    .rodata.logo        bitmap.o
-    0x00000f26   0x00000f26   0x00000002   PAD
-    0x00000f28   0x00000f28   0x00001774   Data   RO          109    .rodata.music       speaker.o
-    0x0000269c   0x0000269c   0x00000010   Data   RO          363    Region$$Table       anon$$obj.o
+    0x00000400   0x00000400   0x00000010   Code   RO          169    .ARM.__at_0x400     startup_mkl05z4.o
+    0x00000410   0x00000410   0x0000004c   Code   RO          179    .text.SystemInit    system_mkl05z4.o
+    0x0000045c   0x0000045c   0x00000078   Code   RO          109    .text.TPM0_IRQHandler  speaker.o
+    0x000004d4   0x000004d4   0x0000007c   Code   RO           97    .text.TPM0_Init_PCM  speaker.o
+    0x00000550   0x00000550   0x00000028   Code   RO           42    .text.TPM1_IRQHandler  hc_sr04.o
+    0x00000578   0x00000578   0x00000060   Code   RO           32    .text.TPM1_Init_InputCapture  hc_sr04.o
+    0x000005d8   0x000005d8   0x00000030   Code   RO           44    .text.TRIG_GPIO_Init  hc_sr04.o
+    0x00000608   0x00000608   0x00000020   Code   RO           46    .text.TRIG_inpulse  hc_sr04.o
+    0x00000628   0x00000628   0x0000000c   Code   RO           36    .text.__NVIC_ClearPendingIRQ  hc_sr04.o
+    0x00000634   0x00000634   0x00000010   Code   RO          101    .text.__NVIC_ClearPendingIRQ  speaker.o
+    0x00000644   0x00000644   0x0000000c   Code   RO           17    .text.__NVIC_EnableIRQ  pit.o
+    0x00000650   0x00000650   0x0000000c   Code   RO           38    .text.__NVIC_EnableIRQ  hc_sr04.o
+    0x0000065c   0x0000065c   0x00000010   Code   RO          103    .text.__NVIC_EnableIRQ  speaker.o
+    0x0000066c   0x0000066c   0x00000018   Code   RO           13    .text.__NVIC_SetPriority  pit.o
+    0x00000684   0x00000684   0x00000014   Code   RO           34    .text.__NVIC_SetPriority  hc_sr04.o
+    0x00000698   0x00000698   0x00000018   Code   RO           99    .text.__NVIC_SetPriority  speaker.o
+    0x000006b0   0x000006b0   0x00000018   Code   RO          107    .text.change_wave_period  speaker.o
+    0x000006c8   0x000006c8   0x00000034   Code   RO          124    .text.delay_ms      delay.o
+    0x000006fc   0x000006fc   0x0000002e   Code   RO          159    .text.delay_us      delay_us.o
+    0x0000072a   0x0000072a   0x00000076   Code   RO           79    .text.itoa          nokia5110.o
+    0x000007a0   0x000007a0   0x00000010   Code   RO           69    .text.lcd_clear     nokia5110.o
+    0x000007b0   0x000007b0   0x00000028   Code   RO           63    .text.lcd_cmd       nokia5110.o
+    0x000007d8   0x000007d8   0x00000034   Code   RO           77    .text.lcd_copy      nokia5110.o
+    0x0000080c   0x0000080c   0x00000010   Code   RO           71    .text.lcd_draw_bitmap  nokia5110.o
+    0x0000081c   0x0000081c   0x00000058   Code   RO           75    .text.lcd_draw_text_medium  nokia5110.o
+    0x00000874   0x00000874   0x0000005c   Code   RO           73    .text.lcd_draw_text_small  nokia5110.o
+    0x000008d0   0x000008d0   0x000000b4   Code   RO           83    .text.lcd_hello     nokia5110.o
+    0x00000984   0x00000984   0x00000020   Code   RO           59    .text.lcd_reset     nokia5110.o
+    0x000009a4   0x000009a4   0x00000026   Code   RO           67    .text.lcd_setup     nokia5110.o
+    0x000009ca   0x000009ca   0x00000002   PAD
+    0x000009cc   0x000009cc   0x0000010c   Code   RO           81    .text.lcd_update    nokia5110.o
+    0x00000ad8   0x00000ad8   0x00000074   Code   RO           85    .text.lcd_zwolnienie  nokia5110.o
+    0x00000b4c   0x00000b4c   0x0000003a   Code   RO            2    .text.main          main.o
+    0x00000b86   0x00000b86   0x00000002   PAD
+    0x00000b88   0x00000b88   0x0000001c   Code   RO           61    .text.spi_send      nokia5110.o
+    0x00000ba4   0x00000ba4   0x000001f6   Code   RO          200    .text_divfast       c_p.l(aeabi_sdivfast.o)
+    0x00000d9a   0x00000d9a   0x0000019d   Data   RO          151    .rodata.font1_ASCII  font.o
+    0x00000f37   0x00000f37   0x000001e0   Data   RO          150    .rodata.font_ASCII  font.o
+    0x00001117   0x00001117   0x000001f8   Data   RO          133    .rodata.logo        bitmap.o
+    0x0000130f   0x0000130f   0x000001f8   Data   RO          134    .rodata.logo1       bitmap.o
+    0x00001507   0x00001507   0x000001f8   Data   RO          143    .rodata.logo10      bitmap.o
+    0x000016ff   0x000016ff   0x000001f8   Data   RO          135    .rodata.logo2       bitmap.o
+    0x000018f7   0x000018f7   0x000001f8   Data   RO          136    .rodata.logo3       bitmap.o
+    0x00001aef   0x00001aef   0x000001f8   Data   RO          137    .rodata.logo4       bitmap.o
+    0x00001ce7   0x00001ce7   0x000001f8   Data   RO          138    .rodata.logo5       bitmap.o
+    0x00001edf   0x00001edf   0x000001f8   Data   RO          139    .rodata.logo6       bitmap.o
+    0x000020d7   0x000020d7   0x000001f8   Data   RO          140    .rodata.logo7       bitmap.o
+    0x000022cf   0x000022cf   0x000001f8   Data   RO          141    .rodata.logo8       bitmap.o
+    0x000024c7   0x000024c7   0x000001f8   Data   RO          142    .rodata.logo9       bitmap.o
+    0x000026bf   0x000026bf   0x00000001   PAD
+    0x000026c0   0x000026c0   0x00002004   Data   RO          115    .rodata.music       speaker.o
+    0x000046c4   0x000046c4   0x000001f8   Data   RO          144    .rodata.please      bitmap.o
+    0x000048bc   0x000048bc   0x00000010   Data   RO          383    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x1ffffc00, Load base: 0x000026ac, Size: 0x00000378, Max: 0x00001000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x1ffffc00, Load base: 0x000048cc, Size: 0x00000378, Max: 0x00001000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x1ffffc00        -       0x00000060   Zero   RW          229    .bss                c_p.l(libspace.o)
-    0x1ffffc60        -       0x000001f8   Zero   RW           81    .bss.lcd_buffer     nokia5110.o
+    0x1ffffc00        -       0x00000060   Zero   RW          249    .bss                c_p.l(libspace.o)
+    0x1ffffc60        -       0x000001f8   Zero   RW           87    .bss.lcd_buffer     nokia5110.o
     0x1ffffe58        -       0x00000001   Zero   RW           23    .bss.pitEnabled     pit.o
-    0x1ffffe59   0x000026ac   0x00000001   PAD
-    0x1ffffe5a        -       0x00000002   Zero   RW          105    .bss.sampleCNT      speaker.o
-    0x1ffffe5c        -       0x0000000c   Zero   RW           82    .bss.str            nokia5110.o
+    0x1ffffe59   0x000048cc   0x00000001   PAD
+    0x1ffffe5a        -       0x00000002   Zero   RW          111    .bss.sampleCNT      speaker.o
+    0x1ffffe5c        -       0x0000000c   Zero   RW           88    .bss.str            nokia5110.o
     0x1ffffe68        -       0x00000002   Zero   RW           48    .bss.tpm0Diff       hc_sr04.o
     0x1ffffe6a        -       0x00000002   Zero   RW           49    .bss.tpm0New        hc_sr04.o
-    0x1ffffe6c        -       0x00000002   Zero   RW          107    .bss.upSampleCNT    speaker.o
-    0x1ffffe6e   0x000026ac   0x00000002   PAD
-    0x1ffffe70        -       0x00000004   Zero   RW          108    .bss.wait_counter   speaker.o
-    0x1ffffe74        -       0x00000004   Zero   RW          106    .bss.wave_period    speaker.o
-    0x1ffffe78        -       0x00000000   Zero   RW          147    HEAP                startup_mkl05z4.o
-    0x1ffffe78        -       0x00000100   Zero   RW          146    STACK               startup_mkl05z4.o
+    0x1ffffe6c        -       0x00000002   Zero   RW          113    .bss.upSampleCNT    speaker.o
+    0x1ffffe6e   0x000048cc   0x00000002   PAD
+    0x1ffffe70        -       0x00000004   Zero   RW          114    .bss.wait_counter   speaker.o
+    0x1ffffe74        -       0x00000004   Zero   RW          112    .bss.wave_period    speaker.o
+    0x1ffffe78        -       0x00000000   Zero   RW          167    HEAP                startup_mkl05z4.o
+    0x1ffffe78        -       0x00000100   Zero   RW          166    STACK               startup_mkl05z4.o
 
 
 ==============================================================================
@@ -865,22 +943,22 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-         0          0        504          0          0        368   bitmap.o
+         0          0       6048          0          0        739   bitmap.o
         52          4          0          0          0        501   delay.o
         46          0          0          0          0        481   delay_us.o
-         0          0        480          0          0        459   font.o
-       284         40          0          0          4       4362   hc_sr04.o
-        80          4          0          0          0        382   main.o
-       604         36          0          0        516       4568   nokia5110.o
+         0          0        893          0          0        603   font.o
+       276         40          0          0          4       4359   hc_sr04.o
+        58          0          0          0          0        378   main.o
+      1216        200          0          0        516       5497   nokia5110.o
        164         28          0          0          1       3839   pit.o
-       320         48       6004          0         12       4391   speaker.o
+       324         44       8196          0         12       4401   speaker.o
         68         38        192          0        256        812   startup_mkl05z4.o
         76         16          0          0          0       2309   system_mkl05z4.o
 
     ----------------------------------------------------------------------
-      1704        214       7198          0        792      22472   Object Totals
+      2292        370      15346          0        792      23919   Object Totals
          0          0         16          0          0          0   (incl. Generated)
-        10          0          2          0          3          0   (incl. Padding)
+        12          0          1          0          3          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -929,15 +1007,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2702        230       7198          0        888      22900   Grand Totals
-      2702        230       7198          0        888      22900   ELF Image Totals
-      2702        230       7198          0          0          0   ROM Totals
+      3290        386      15346          0        888      24347   Grand Totals
+      3290        386      15346          0        888      24347   ELF Image Totals
+      3290        386      15346          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 9900 (   9.67kB)
+    Total RO  Size (Code + RO Data)                18636 (  18.20kB)
     Total RW  Size (RW Data + ZI Data)               888 (   0.87kB)
-    Total ROM Size (Code + RO Data + RW Data)       9900 (   9.67kB)
+    Total ROM Size (Code + RO Data + RW Data)      18636 (  18.20kB)
 
 ==============================================================================
 

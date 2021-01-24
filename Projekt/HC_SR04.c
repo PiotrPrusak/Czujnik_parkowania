@@ -64,5 +64,4 @@ void TRIG_inpulse(void){
 			PTB->PTOR|=(1<<TRIG);     //enable HIGH level on TRIG
 			delay_us(10); 							//wait 10us
 			PTB->PTOR|=(1<<TRIG);			//disable HIGH level on TRIG
-			delay_us(10);
 }

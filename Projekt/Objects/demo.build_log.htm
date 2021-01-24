@@ -22,19 +22,27 @@ Dialog DLL:      TARMCM1.DLL V1.14.3.0
  
 <h2>Project:</h2>
 C:\Users\asus\Desktop\smp08_01\Czujnik_parkowania-main\Projekt\demo.uvprojx
-Project File Date:  01/08/2021
+Project File Date:  01/23/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.14.1', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'FRDM-KL05ZJ'
-main.c(44): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-        change_wave_period(TPM1_GetVal());  //change frequency of speaker tone
-        ~~~~~~~~~~~~~~~~~~ ^~~~~~~~~~~~~
-1 warning generated.
-compiling main.c...
+Nokia5110.c(108): warning: implicitly declaring library function 'memset' with type 'void *(void *, int, unsigned int)' [-Wimplicit-function-declaration]
+        memset(lcd_buffer, 0, LCD_BUFFER_SIZE);
+        ^
+Nokia5110.c(108): note: include the header <string.h> or explicitly provide a declaration for 'memset'
+Nokia5110.c(114): warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned int)' [-Wimplicit-function-declaration]
+        memcpy(lcd_buffer, data, LCD_BUFFER_SIZE);
+        ^
+Nokia5110.c(114): note: include the header <string.h> or explicitly provide a declaration for 'memcpy'
+Nokia5110.c(252): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+3 warnings generated.
+compiling Nokia5110.c...
 linking...
-Program Size: Code=2702 RO-data=7198 RW-data=0 ZI-data=888  
-".\Objects\demo.axf" - 0 Error(s), 1 Warning(s).
+Program Size: Code=3290 RO-data=15346 RW-data=0 ZI-data=888  
+".\Objects\demo.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 

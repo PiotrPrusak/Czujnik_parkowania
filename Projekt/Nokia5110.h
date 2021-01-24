@@ -15,7 +15,9 @@ void lcd_setup(void);
 
 void lcd_clear(void);
 void lcd_draw_bitmap(const uint8_t* data);
-void lcd_draw_text(int row, int col, const char* text);
+void lcd_draw_text_small(int row, int col, const char* text);
+
+void lcd_draw_text_medium(int row, int col, const char* text);
  
 void lcd_copy(void);
 
@@ -29,5 +31,8 @@ void lcd_data(const uint8_t* data, int size);
 
 void lcd_update(void);
 
+void lcd_hello(void);
+
+void lcd_zwolnienie(void);
 #endif 
 

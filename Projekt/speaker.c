@@ -9,7 +9,7 @@
 
 void TPM0_IRQHandler(void);
 
-
+//static uint8_t tpm0Enabled = 0;
 
 static uint16_t upSampleCNT = 0;
 static uint16_t sampleCNT = 0;
@@ -50,6 +50,7 @@ void TPM0_Init_PCM(void) {
 	NVIC_ClearPendingIRQ(TPM0_IRQn); 
 	NVIC_EnableIRQ(TPM0_IRQn);	/* Enable Interrupts */
 	
+//	tpm0Enabled = 1;  /* set local flag */
 }
 
 void TPM0_PCM_Play(void) {
@@ -59,7 +60,15 @@ void TPM0_PCM_Play(void) {
 
 void change_wave_period(uint8_t new_wave_period)
 {
+	if(new_wave_period < 10)
+	{
+		wave_period = 0;
+	}
+	else
+	{
 	wave_period=(uint32_t)new_wave_period*20;//(int)((101-new_wave_period)/10) + 30;
+	}
+
 }
 
 
@@ -70,12 +79,13 @@ void TPM0_IRQHandler(void) {
 		{
 			if(sampleCNT == 0)
 			{
-				if(wait_counter <= wave_period)
+				if(wait_counter < wave_period)
 				{
 				wait_counter++;
 				}
 				else
 				{
+					TPM0->CONTROLS[2].CnV = music[0];
 					wait_counter = 0;
 					sampleCNT = 1;
 				}
@@ -83,7 +93,7 @@ void TPM0_IRQHandler(void) {
 			else
 			{
 				TPM0->CONTROLS[2].CnV = music[sampleCNT++]; // load new sample
-				if (sampleCNT > WAVE_SAMPLES) 
+				if (sampleCNT >= WAVE_SAMPLES) 
 				{
 				sampleCNT = 0;
 				TPM0->CONTROLS[2].CnV = 0;

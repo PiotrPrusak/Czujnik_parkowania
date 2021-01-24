@@ -92,7 +92,7 @@ void lcd_data(const uint8_t* data, int size)
 	PTB->PSOR|=(1<<CE);
 }
 
-void lcd_setup(void)
+void lcd_setup(void)//initialize screen
 {
 	lcd_reset();
 	
@@ -103,7 +103,7 @@ void lcd_setup(void)
 	lcd_cmd(PCD8544_DISP_NORMAL);
 }
 
-void lcd_clear(void)
+void lcd_clear(void)//clear buffer
 {
 	memset(lcd_buffer, 0, LCD_BUFFER_SIZE);
 }	
@@ -115,7 +115,7 @@ void lcd_draw_bitmap(const uint8_t* data)
 }	
 
 
-void lcd_draw_text(int row, int col, const char* text)
+void lcd_draw_text_small(int row, int col, const char* text)
 {
 		int i;
 	uint8_t* pbuf = &lcd_buffer[row * 84 + col];
@@ -128,8 +128,20 @@ void lcd_draw_text(int row, int col, const char* text)
 		*pbuf++ = 0;
 	}
 }
-
-void lcd_copy(void)
+void lcd_draw_text_medium(int row, int col, const char* text)
+{
+		int i;
+	uint8_t* pbuf = &lcd_buffer[row * 84 + col];
+	while ((*text) && (pbuf < &lcd_buffer[LCD_BUFFER_SIZE - 6])) {
+		int ch = *text++;
+		const uint8_t* font = &font1_ASCII[ch - ' '][0];
+		for (i = 0; i < 7; i++) {
+			*pbuf++ = *font++;
+		}
+		*pbuf++ = 0;
+	}
+}
+void lcd_copy(void)//copy buffer to screen
 {
 	int i;
 	PTB->PSOR|=(1<<DC);     //send data
@@ -138,7 +150,7 @@ void lcd_copy(void)
 		spi_send(lcd_buffer[i]);
 	PTB->PSOR|=(1<<CE);
 }
-uint8_t itoa(int value, char *ptr) {
+uint8_t itoa(int value, char *ptr) { //int to string
 	
 	uint8_t count=0;
 	int temp;
@@ -167,9 +179,74 @@ uint8_t itoa(int value, char *ptr) {
 //function to print HC-SR04 distance in cm on LCD
 void lcd_update(void) {     
 	itoa((int)TPM1_GetVal(), str);
-	lcd_clear();
-	lcd_draw_text(0, 1 * 8,str);
+	if((int)TPM1_GetVal()>5)
+	{
+	lcd_draw_text_medium(0, 4 * 8,str);
 	lcd_copy();
- 
+	delay_ms(10);
+	}
+		if((int)TPM1_GetVal()<=5)
+	{
+		lcd_draw_bitmap(logo1);
+	}
+	else 	if((int)TPM1_GetVal()>5 && (int)TPM1_GetVal()<=15)
+	{lcd_draw_bitmap(logo2);
+	}
+	else 	if((int)TPM1_GetVal()>15 && (int)TPM1_GetVal()<=25)
+	{lcd_draw_bitmap(logo3);
+	}
+	else 	if((int)TPM1_GetVal()>25 && (int)TPM1_GetVal()<=35)
+	{lcd_draw_bitmap(logo4);
+	}
+	else 	if((int)TPM1_GetVal()>35 && (int)TPM1_GetVal()<=45)
+	{lcd_draw_bitmap(logo5);
+	}
+	else 	if((int)TPM1_GetVal()>45 && (int)TPM1_GetVal()<=55)
+	{lcd_draw_bitmap(logo6);
+	}
+	else 	if((int)TPM1_GetVal()>55 && (int)TPM1_GetVal()<=65)
+	{lcd_draw_bitmap(logo7);
+	}
+	else 	if((int)TPM1_GetVal()>65 && (int)TPM1_GetVal()<=85)
+	{lcd_draw_bitmap(logo8);
+	}
+	else 	if((int)TPM1_GetVal()>85 && (int)TPM1_GetVal()<=105)
+	{lcd_draw_bitmap(logo9);
+	}
+	else
+	{lcd_draw_bitmap(logo10);
+	}
+	lcd_copy();
+	//lcd_clear();
    
+}
+
+void lcd_hello(void) { 
+	lcd_draw_bitmap(logo);				//Show welcome image
+	lcd_copy();
+	lcd_clear();
+	delay_ms(5000);
+	lcd_draw_text_small(0, 0 * 8,"Czujnik");
+	lcd_draw_text_small(1, 0 * 8,"parkowania");
+	lcd_draw_text_small(2, 0 * 8,"wykonali:");
+	lcd_draw_text_small(3, 0 * 8,"Piotr Prusak &:");
+	lcd_draw_text_small(4, 0 * 8,"Tomasz");
+	lcd_draw_text_small(5, 0 * 8,"Sokolowski");
+	lcd_copy();
+	delay_ms(5000);
+	lcd_clear();
+}
+
+void lcd_zwolnienie(void) {
+		lcd_draw_text_medium(0, 0 * 8,"PROSIMY O");
+	lcd_draw_text_medium(1, 0 * 8,"ZWOLNIENIE");
+	lcd_draw_text_medium(2, 0 * 8,"Z EGAZMINU");
+
+	lcd_copy();
+	delay_ms(5000);
+	lcd_draw_bitmap(please);			
+	lcd_copy();
+	lcd_clear();
+	delay_ms(5000);
+	lcd_clear();
 }
