@@ -18,4 +18,4 @@ W projekcie chcemy zrealizować czujnik parkowania z wykorzystaniem dalmierza ul
 - 24.01  Nagranie filmiku
 
 **Filmik:**
-https://drive.google.com/file/d/1jbchCYlchjEzM_aByFYoz8Htuer937-k/view?usp=sharing
+https://youtu.be/EYqzZzFkE_w
